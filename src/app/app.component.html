@@ -1,0 +1,66 @@
+<!-- <h1>Angular</h1> -->
+<!-- <courses></courses> -->
+<!-- <favorite (change)="onFavoriteChanged($event)"></favorite> -->
+<!-- <contact-form></contact-form> -->
+<!-- <new-course-form-component></new-course-form-component> -->
+<nav>
+  <li> <a routerLink="/"> HOME </a> </li>
+  <li> <a routerLinkActive="active" routerLink="/signup"> SIGNUP</a> </li>
+  <li> <a routerLinkActive="active" routerLink="/signup-details">SIGNUP DETAILS</a> </li>
+  <li> <a routerLinkActive="active" routerLink="/followers">FOLLOWERS</a> </li>
+  <li> <a routerLinkActive="active" routerLink="/posts">POSTS</a> </li>
+</nav>
+<router-outlet></router-outlet>
+
+<!--
+<input type="text" appInputFormat />
+{{task.assignee.name}}
+<button
+  
+  [ngStyle]="{
+    'backgroundColor': canSave ? 'blue': 'grey',
+    'color': canSave ? 'white': 'black',
+    'fontWeight': canSave ? 'bold': 'normal'
+  }"
+  >
+Custom Button
+</button> <br /> <br />
+<button (click)="loadCourses()">Load Courses</button>
+<button (click)="onAdd()">Add Courses</button>
+<div *ngIf="courses.length > 0">
+  List of Courses
+</div>
+<div *ngIf="courses.length == 0">
+  No Courses Yet
+</div>
+-->
+<!-- NG For Loop
+<ul>
+  <li *ngFor="let course of myCourses; trackBy: trackCourse index as i; even as isEven; first as isFirst ">
+
+    {{i}} - {{course.id}} - {{ course.name}} <span *ngIf="isEven">(Even)</span> <span *ngIf="isFirst"> (__ First Element __)</span>
+    <button (click)="onRemove(course)">Remove Courses</button>
+  </li>
+</ul>
+
+
+<app-tabbing>dd</app-tabbing>
+ -->
+<!--<bootstrap-panel>
+   <div class="heading">
+      Heading
+  </div> 
+  <ng-container class="heading">
+      Heading
+  </ng-container>
+  
+  <div class="body">
+    <h2>Body</h2>
+    <p> Some Content</p>
+  </div>
+    <hr /> 
+</bootstrap-panel>
+-->
+
+<!-- <signup-form></signup-form> -->
+<!-- <favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChange()"></favorite> -->

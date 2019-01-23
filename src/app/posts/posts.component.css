@@ -1,0 +1,10 @@
+.list-group-item .data{
+  width: 80%;
+  float: left;
+}
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}

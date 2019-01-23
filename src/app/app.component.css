@@ -1,0 +1,17 @@
+.active{
+  color: red
+}
+
+ul{
+  list-style: none;
+}
+li{
+  display: inline-block;
+  border-right: 1px solid #dedede;
+}
+li:last-child{
+  border: none;
+}
+li a{
+  margin: 0 5px;
+}

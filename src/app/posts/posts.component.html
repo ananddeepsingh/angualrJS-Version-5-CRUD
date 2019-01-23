@@ -1,0 +1,24 @@
+<form>
+
+<input 
+  type="text" 
+  class="form-control"
+  (keyup.enter)="takeAction(fname)"
+  #fname
+    id="fname"
+  placeholder="Add Record"
+>
+</form>
+<br />
+<ul class="list-group">
+  <li 
+    class="list-group-item"
+    *ngFor="let post of posts"
+  >
+  <div class="data">
+    {{post.fname}}
+  </div>
+  <button class="btn btn-primary btn-sm text-right" (click)="showDataInControl(post)">Update</button> &nbsp; 
+  <button class="btn btn-primary btn-sm text-right" (click)="deletePost(post)">Delete</button>
+  </li>
+</ul>

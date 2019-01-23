@@ -1,0 +1,102 @@
+<form [formGroup]="form"  #f="ngForm" (click)="onSubmit($event)">
+    <!-- <div class="alert alert-danger" *ngIf="form.errors">
+      Username and Password is invalid
+    </div> -->
+    <!-- <div formGroupName="account"> -->
+    {{ f.value | json}}
+
+    <div >
+      <div class="form-group">
+        <label for="username">Full Name</label>
+        <input 
+          id="fullName" 
+          formControlName ="fullName" 
+          type="text" 
+          class="form-control"
+        />
+          <div class="alert alert-danger" *ngIf="this.form.get('fullName').errors.cannotContainSpace">Cannot Contain Space for full name</div>
+      </div>
+      <div class="form-group">
+          
+          <label for="username">Username</label>
+          <input 
+            id="username" 
+            formControlName ="username" 
+            type="text" 
+            class="form-control"
+          />
+          <div *ngIf="username.pending">Checking for unique username</div>
+          <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+            <div *ngIf="username.errors.shouldBeUnique" class="err">Username is already exists</div>
+            <div *ngIf="username.errors.cannotContainSpace">Cannot Contain Space</div>
+            <div *ngIf="username.errors.required">Username is required</div>
+            <div *ngIf="username.errors.minlength">Username should be minium {{form.get('username').errors.minlength.requiredLength}} required</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input 
+              id="password" 
+              formControlName="password" 
+              type="password" 
+              class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="selectBox">Country</label>
+        <select 
+          id="selectBox" 
+          formControlName="country" 
+          type="password" 
+          class="form-control"> 
+          <option value="0" selected="selected">Selected</option>
+          <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input 
+          formControlName="gender"
+          type="radio" 
+          name="gender"
+          value="Male"
+          class="form-control" /> Male
+
+          <input 
+            formControlName="gender"
+            type="radio" 
+            name="gender"
+            value="Female"
+            class="form-control" /> Female
+      </div>
+
+      <div class="form-group">
+        <label for="transport">Transport You Use</label>
+        <input 
+          formControlName="publicTransport" 
+          name="publicTransport"
+          type="checkbox" 
+          value="false"
+          class="form-control" /> Public Transport
+
+          <input 
+            formControlName="privateTransport" 
+            name="privateTransport"
+            type="checkbox" 
+            value="false"
+            class="form-control" /> Private Transport
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Comments</label>
+        <textarea 
+          id="comments" 
+          formControlName="comments" 
+          type="text" 
+          class="form-control"> 
+        </textarea>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
